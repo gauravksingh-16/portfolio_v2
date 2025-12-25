@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react";
 import { AnimatePresence } from "framer-motion";
 import { DotsSixVertical, List } from "@phosphor-icons/react";
-import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PDFPopover from "@/components/PDFPopover";

@@ -25,6 +25,13 @@ export default function ExperimentDetailPage() {
         }
     }, [params.id, router]);
 
+    // Handle redirect for non-PDF links
+    useEffect(() => {
+        if (experiment?.link && !experiment.link.endsWith('.pdf')) {
+            window.location.href = experiment.link;
+        }
+    }, [experiment]);
+
     if (!experiment) {
         return (
             <>
@@ -53,13 +60,6 @@ export default function ExperimentDetailPage() {
                 </AnimatePresence>
             </>
         );
-    }
-
-    // For other types, redirect to the link or show experiment details
-    if (experiment.link) {
-        useEffect(() => {
-            window.location.href = experiment.link!;
-        }, [experiment.link]);
     }
 
     return (
