@@ -1,12 +1,14 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import dynamicImport from "next/dynamic";
 import { useParams, useRouter } from "next/navigation";
 import { AnimatePresence } from "framer-motion";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import PDFPopover from "@/components/PDFPopover";
 import { experiments } from "@/data/experiments";
+
+const PDFPopover = dynamicImport(() => import("@/components/PDFPopover"), { ssr: false });
 
 export const dynamic = 'force-dynamic';
 

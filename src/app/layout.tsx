@@ -3,6 +3,7 @@ import "./globals.css";
 import { StructuredData } from "./structured-data";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://gauravkumarsingh.com"),
   title: "Gaurav Kumar Singh | Product Designer & UX/UI Designer",
   description: "Product designer based in India creating seamless, human-centered experiences through UX, UI, and visual design. Focused on clarity, creativity, and impact.",
   keywords: [

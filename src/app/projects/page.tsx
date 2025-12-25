@@ -7,6 +7,8 @@ import Footer from "@/components/Footer";
 import ProjectGrid from "@/components/ProjectGrid";
 import { projects } from "@/data/projects";
 
+export const dynamic = 'force-dynamic';
+
 export default function ProjectsPage() {
     const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
 

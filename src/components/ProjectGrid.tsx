@@ -1,10 +1,12 @@
 "use client";
 
 import { useState } from "react";
+import dynamic from "next/dynamic";
 import { AnimatePresence } from "framer-motion";
 import { type Project } from "@/data/projects";
 import PasswordModal from "./PasswordModal";
-import PDFPopover from "./PDFPopover";
+
+const PDFPopover = dynamic(() => import("./PDFPopover"), { ssr: false });
 
 interface ProjectGridProps {
     projects: Project[];

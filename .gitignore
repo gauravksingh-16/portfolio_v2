@@ -94,7 +94,3 @@ temp/
 
 # Local development
 .env.example
-README.md
-CHANGELOG.md
-LICENSE
-*.md

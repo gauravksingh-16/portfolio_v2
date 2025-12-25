@@ -7,6 +7,9 @@ import ScrollIndicator from "@/components/ScrollIndicator";
 import HeroSection from "@/components/HeroSection";
 import Loader from "@/components/Loader";
 
+// Force dynamic rendering to avoid SSR issues with framer-motion
+export const dynamic = 'force-dynamic';
+
 // Lazy load below-the-fold components
 const AboutSection = lazy(() => import("@/components/AboutSection"));
 const WorksSection = lazy(() => import("@/components/WorksSection"));

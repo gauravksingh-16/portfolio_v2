@@ -1,13 +1,15 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import dynamicImport from "next/dynamic";
 import { AnimatePresence } from "framer-motion";
 import { DotsSixVertical, List } from "@phosphor-icons/react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import PDFPopover from "@/components/PDFPopover";
 import ExperimentImage from "@/components/ExperimentImage";
 import { experiments, type ExperimentCategory } from "@/data/experiments";
+
+const PDFPopover = dynamicImport(() => import("@/components/PDFPopover"), { ssr: false });
 
 export const dynamic = 'force-dynamic';
 

@@ -1,4 +1,3 @@
-https://github.com/gauravksingh-16/portfolio_v2.git
 "use client";
 
 import { motion, useInView } from "framer-motion";
