@@ -1,0 +1,13 @@
+# robots.txt for Gaurav Kumar Singh Portfolio
+
+User-agent: *
+Allow: /
+
+# Disallow admin or private areas (if any in future)
+# Disallow: /admin/
+
+# Sitemap location
+Sitemap: https://gauravkumarsingh.com/sitemap.xml
+
+# Crawl-delay (optional, helps prevent server overload)
+Crawl-delay: 1

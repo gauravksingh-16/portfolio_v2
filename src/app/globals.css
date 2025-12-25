@@ -1,26 +1,339 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Hide scrollbar for all browsers */
+* {
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+}
+
+*::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari, Opera */
+}
+
+/* Grainy texture overlay */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.05;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    mix-blend-mode: overlay;
+}
+
+@font-face {
+    font-family: "Helvetica Neue";
+    src: url("/fonts/Helvetica/HelveticaNeueUltraLight.otf") format("opentype");
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Helvetica Neue";
+    src: url("/fonts/Helvetica/HelveticaNeueUltraLightItalic.otf") format("opentype");
+    font-weight: 100;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Helvetica Neue";
+    src: url("/fonts/Helvetica/HelveticaNeueThin.otf") format("opentype");
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Helvetica Neue";
+    src: url("/fonts/Helvetica/HelveticaNeueThinItalic.otf") format("opentype");
+    font-weight: 200;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Helvetica Neue";
+    src: url("/fonts/Helvetica/HelveticaNeueLight.otf") format("opentype");
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Helvetica Neue";
+    src: url("/fonts/Helvetica/HelveticaNeueLightItalic.otf") format("opentype");
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Helvetica Neue";
+    src: url("/fonts/Helvetica/HelveticaNeueRoman.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Helvetica Neue";
+    src: url("/fonts/Helvetica/HelveticaNeueItalic.ttf") format("truetype");
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Helvetica Neue";
+    src: url("/fonts/Helvetica/HelveticaNeueMedium.otf") format("opentype");
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Helvetica Neue";
+    src: url("/fonts/Helvetica/HelveticaNeueMediumItalic.otf") format("opentype");
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Helvetica Neue";
+    src: url("/fonts/Helvetica/HelveticaNeueBold.otf") format("opentype");
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Helvetica Neue";
+    src: url("/fonts/Helvetica/HelveticaNeueBoldItalic.otf") format("opentype");
+    font-weight: 700;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Helvetica Neue";
+    src: url("/fonts/Helvetica/HelveticaNeueHeavy.otf") format("opentype");
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Helvetica Neue";
+    src: url("/fonts/Helvetica/HelveticaNeueHeavyItalic.otf") format("opentype");
+    font-weight: 800;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Helvetica Neue";
+    src: url("/fonts/Helvetica/HelveticaNeueBlack.otf") format("opentype");
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Helvetica Neue";
+    src: url("/fonts/Helvetica/HelveticaNeueBlackItalic.otf") format("opentype");
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Denton";
+    src: url("/fonts/Denton/DentonTextCondTest-Thin.otf") format("opentype");
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Denton";
+    src: url("/fonts/Denton/DentonTextCondTest-ThinItalic.otf") format("opentype");
+    font-weight: 100;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Denton";
+    src: url("/fonts/Denton/DentonTextCondTest-Light.otf") format("opentype");
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Denton";
+    src: url("/fonts/Denton/DentonTextCondTest-LightItalic.otf") format("opentype");
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Denton";
+    src: url("/fonts/Denton/DentonTextCondTest-Regular.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Denton";
+    src: url("/fonts/Denton/DentonTextCondTest-RegularItalic.otf") format("opentype");
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Denton";
+    src: url("/fonts/Denton/DentonTextCondTest-Medium.otf") format("opentype");
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Denton";
+    src: url("/fonts/Denton/DentonTextCondTest-MediumItalic.otf") format("opentype");
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Denton";
+    src: url("/fonts/Denton/DentonTextCondTest-Bold.otf") format("opentype");
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Denton";
+    src: url("/fonts/Denton/DentonTextCondTest-BoldItalic.otf") format("opentype");
+    font-weight: 700;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Denton";
+    src: url("/fonts/Denton/DentonTextCondTest-ExtraBold.otf") format("opentype");
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Denton";
+    src: url("/fonts/Denton/DentonTextCondTest-ExtraBoldItalic.otf") format("opentype");
+    font-weight: 800;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Denton";
+    src: url("/fonts/Denton/DentonTextCondTest-Black.otf") format("opentype");
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Denton";
+    src: url("/fonts/Denton/DentonTextCondTest-BlackItalic.otf") format("opentype");
+    font-weight: 900;
+    font-style: italic;
+}
+
+.font-helvetica {
+    letter-spacing: -0.04em;
+}
+
+.font-denton {
+    letter-spacing: -0.02em;
+}
+
+/* Global anchor tag styles - excludes nav links which have custom underlines */
+a:not(nav a) {
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+a:not(nav a)::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 1px;
+    background-color: currentColor;
+    width: 0;
+    transition: width 0.3s ease;
+}
+
+a:not(nav a):hover::after {
+    width: 100%;
+}
+
+/* Navigation link styles */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 1px;
+    background-color: currentColor;
+    width: 0;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-link-active::after {
+    width: 100% !important;
+}
+
+button{
+    cursor: pointer;
+}
+
+/* Hide Next.js development indicator */
+#__next-build-watcher,
+[data-nextjs-toast-errors-parent],
+nextjs-portal {
+    display: none !important;
+}
+
+/* Fade in animation for play/pause text */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+    /* Core Colors */
+    --color-black: #0a0a0a;
+    --color-green: #02251c;
+    --color-yellow: #fbbc04;
+    --color-tangerine: #eb3d00;
+    --color-blue: #4285f4;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+    /* Crust Colors */
+    --color-white: #ffffff;
+    --color-green-crust: #d0f5e7;
+    --color-yellow-crust: #f7f1d3;
+    --color-tangerine-crust: #f1e5d3;
+    --color-blue-crust: #e2eff3;
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+    /* Mantle Colors */
+    --color-black-mantle: #3c3c3c;
+    --color-green-mantle: #1ce29a;
+    --color-yellow-mantle: #ffdc4b;
+    --color-tangerine-mantle: #ff6732;
+    --color-blue-mantle: #57cbff;
+
+    /* Font Families */
+    --font-helvetica: "Helvetica Neue", sans-serif;
+    --font-denton: "Denton", sans-serif;
 }
