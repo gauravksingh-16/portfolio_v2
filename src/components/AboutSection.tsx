@@ -101,7 +101,7 @@ export default function AboutSection() {
           <img src="/assets/blockface.svg" alt="Avatar" className="w-12 h-12 md:w-24 md:h-24 flex-shrink-0" style={{ filter: 'invert(1)' }} />
           <div>
             <p className="font-helvetica font-normal leading-tight text-xl md:text-2xl text-black">
-              Hello! I'm
+              Hello! I&apos;m
               <br />Gaurav Kumar Singh
             </p>
             <a href="#" className="text-xs md:text-sm font-bold font-helvetica text-black inline-block mt-1">

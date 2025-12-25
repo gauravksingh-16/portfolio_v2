@@ -1,6 +1,13 @@
 "use client";
 
 import { type Project } from "@/data/projects";
+import { motion } from "framer-motion";
+import { motion } from "framer-motion";
+import { motion } from "framer-motion";
+import { motion } from "framer-motion";
+import { useState } from "react";
+import { useState } from "react";
+import { useState } from "react";
 
 interface PasswordModalProps {
     project: Project;
