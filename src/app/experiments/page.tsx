@@ -9,6 +9,8 @@ import PDFPopover from "@/components/PDFPopover";
 import ExperimentImage from "@/components/ExperimentImage";
 import { experiments, type ExperimentCategory } from "@/data/experiments";
 
+export const dynamic = 'force-dynamic';
+
 export default function ExperimentsPage() {
     const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
     const [activeCategory, setActiveCategory] = useState<ExperimentCategory>("all");

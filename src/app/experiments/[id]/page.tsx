@@ -8,6 +8,8 @@ import Footer from "@/components/Footer";
 import PDFPopover from "@/components/PDFPopover";
 import { experiments } from "@/data/experiments";
 
+export const dynamic = 'force-dynamic';
+
 export default function ExperimentDetailPage() {
     const params = useParams();
     const router = useRouter();
