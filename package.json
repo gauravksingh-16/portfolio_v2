@@ -14,7 +14,7 @@
     "@react-three/drei": "^10.7.6",
     "@react-three/fiber": "^9.3.0",
     "framer-motion": "^11.18.2",
-    "next": "15.5.4",
+    "next": "^16.1.1",
     "pdfjs-dist": "^5.4.394",
     "react": "19.1.0",
     "react-dom": "19.1.0",
@@ -29,7 +29,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "15.5.4",
+    "eslint-config-next": "^16.1.1",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
