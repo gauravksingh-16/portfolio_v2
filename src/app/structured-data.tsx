@@ -5,8 +5,8 @@ export function StructuredData() {
     name: "Gaurav Kumar Singh",
     jobTitle: "Product Designer",
     description: "Product designer based in India creating seamless, human-centered experiences through UX, UI, and visual design.",
-    url: "https://gauravkumarsingh.com",
-    image: "https://gauravkumarsingh.com/assets/my image.png",
+    url: "https://gauravksingh.vercel.app",
+    image: "https://gauravksingh.vercel.app/assets/my image.png",
     sameAs: [
       "https://www.linkedin.com/in/gauravksingh16/",
       "https://www.behance.net/gauravsingh_16",

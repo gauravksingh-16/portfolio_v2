@@ -3,7 +3,7 @@ import "./globals.css";
 import { StructuredData } from "./structured-data";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://gauravkumarsingh.com"),
+  metadataBase: new URL("https://gauravksingh.vercel.app"),
   title: "Gaurav Kumar Singh | Product Designer & UX/UI Designer",
   description: "Product designer based in India creating seamless, human-centered experiences through UX, UI, and visual design. Focused on clarity, creativity, and impact.",
   keywords: [
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://gauravkumarsingh.com",
+    url: "https://gauravksingh.vercel.app",
     title: "Gaurav Kumar Singh | Product Designer & UX/UI Designer",
     description: "Product designer based in India creating seamless, human-centered experiences through UX, UI, and visual design. Focused on clarity, creativity, and impact.",
     siteName: "Gaurav Kumar Singh Portfolio",
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
     google: "your-google-verification-code",
   },
   alternates: {
-    canonical: "https://gauravkumarsingh.com",
+    canonical: "https://gauravksingh.vercel.app",
   },
 };
 
@@ -75,7 +75,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="overflow-x-hidden">
       <head>
-        <link rel="canonical" href="https://gauravkumarsingh.com" />
+        <link rel="canonical" href="https://gauravksingh.vercel.app" />
         <StructuredData />
       </head>
       <body className="overflow-x-hidden">{children}</body>
