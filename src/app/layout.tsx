@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     creator: "@gauravksingh",
   },
   verification: {
-    google: "your-google-verification-code",
+    google: "xbXlRtsD_Jjzod3zSu6ozvB74G7oiS0zYQjqhcBg1sw",
   },
   alternates: {
     canonical: "https://gauravksingh.vercel.app",
