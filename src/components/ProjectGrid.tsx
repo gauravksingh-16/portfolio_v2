@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import dynamic from "next/dynamic";
 import { AnimatePresence } from "framer-motion";
 import { type Project } from "@/data/projects";
@@ -15,6 +16,7 @@ interface ProjectGridProps {
 }
 
 export default function ProjectGrid({ projects, showFeaturedBadge = false, viewMode = "grid" }: ProjectGridProps) {
+    const router = useRouter();
     const [selectedProject, setSelectedProject] = useState<Project | null>(null);
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -22,6 +24,12 @@ export default function ProjectGrid({ projects, showFeaturedBadge = false, viewM
     const [selectedProjectId, setSelectedProjectId] = useState<string | null>(null);
 
     const handleProjectClick = (project: Project) => {
+        // Check if project is unpublished first - navigate to coming soon page
+        if (!project.published) {
+            router.push("/coming-soon");
+            return;
+        }
+        
         if (project.protected) {
             setSelectedProject(project);
         } else if (project.link) {
@@ -30,7 +38,7 @@ export default function ProjectGrid({ projects, showFeaturedBadge = false, viewM
                 setPdfUrl(project.link);
                 setSelectedProjectId(project.id);
             } else {
-                window.location.href = project.link;
+                router.push(project.link);
             }
         }
     };
@@ -61,7 +69,7 @@ export default function ProjectGrid({ projects, showFeaturedBadge = false, viewM
                                     <h3 className="font-helvetica text-2xl md:text-4xl mb-2 md:mb-4 text-black">
                                         {project.title}
                                     </h3>
-                                    <p className="font-helvetica text-sm md:text-base text-black-mantle leading-relaxed">
+                                    <p className="font-helvetica font-[500] text-sm md:text-base text-black-mantle leading-relaxed">
                                         {project.description}
                                     </p>
                                 </div>
@@ -119,9 +127,11 @@ export default function ProjectGrid({ projects, showFeaturedBadge = false, viewM
                         onClick={() => handleProjectClick(project)}
                     >
                         <div className="aspect-[4/3] bg-black-mantle mb-4 md:mb-6 overflow-hidden">
-                            <div className="w-full h-full flex items-center justify-center text-white font-helvetica text-sm md:text-base">
-                                Project Image
-                            </div>
+                            <img
+                                src={project.image}
+                                alt={project.title}
+                                className="w-full h-full object-cover"
+                            />
                         </div>
 
                         <div>

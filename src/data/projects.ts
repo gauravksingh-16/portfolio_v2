@@ -7,28 +7,31 @@ export interface Project {
     protected: boolean;
     link?: string;
     featured: boolean;
+    published: boolean;
 }
 
 export const projects: Project[] = [
     {
-        id: "career-prep-tools",
-        title: "Career Prep Tools",
+        id: "monk-design-system",
+        title: "Monk Design System",
         company: "CA Monk",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        image: "/placeholder-project-1.jpg",
+        description: "The official design system for CA Monk, providing a unified visual language and reusable components for consistent brand experiences.",
+        image: "/assets/projects/Monk-design-system.png",
         protected: true,
-        link: "/projects/career-prep-tools",
-        featured: true
+        link: "/projects/monk-design-system",
+        featured: true,
+        published: false
     },
     {
-        id: "ai-platform",
-        title: "AI Platform for HRs",
+        id: "camonk-profile-onboarding",
+        title: "Redesigning new user onboarding",
         company: "CA Monk",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         image: "/placeholder-project-2.jpg",
         protected: false,
-        link: "/projects/ai-platform",
-        featured: true
+        link: "/projects/camonk-profile-onboarding",
+        featured: true,
+        published: false
     },
     {
         id: "investor-pitch",
@@ -38,7 +41,8 @@ export const projects: Project[] = [
         image: "/placeholder-project-3.jpg",
         protected: true,
         link: "/projects/investor-pitch",
-        featured: true
+        featured: true,
+        published: false
     },
     {
         id: "marketing-materials",
@@ -48,6 +52,7 @@ export const projects: Project[] = [
         image: "/placeholder-project-4.jpg",
         protected: false,
         link: "/projects/marketing-materials",
-        featured: true
+        featured: true,
+        published: false
     }
 ];

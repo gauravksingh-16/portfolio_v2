@@ -242,6 +242,10 @@ body::before {
     letter-spacing: -0.04em;
 }
 
+p.font-helvetica {
+    letter-spacing: -0.02em;
+}
+
 .font-denton {
     letter-spacing: -0.02em;
 }
@@ -288,7 +292,7 @@ a:not(nav a):hover::after {
     width: 100% !important;
 }
 
-button{
+button {
     cursor: pointer;
 }
 
@@ -305,6 +309,7 @@ nextjs-portal {
         opacity: 0;
         transform: scale(0.9);
     }
+
     100% {
         opacity: 1;
         transform: scale(1);

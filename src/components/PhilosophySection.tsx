@@ -72,12 +72,14 @@ export default function PhilosophySection() {
             className="group cursor-pointer"
           >
             <div className="aspect-[4/3] bg-black-mantle mb-4 overflow-hidden relative">
-              <div className="w-full h-full flex items-center justify-center text-white font-helvetica text-sm md:text-base">
-                Experiments
-              </div>
+              <img
+                src="/assets/Experiments.png"
+                alt="Experiments"
+                className="w-full h-full object-cover"
+              />
             </div>
             <h5 className="text-white font-helvetica text-2xl">
-              Some Experiments <span className="text-xs md:text-sm">(Self)</span>
+              Some Experiments 
             </h5>
           </div>
 
@@ -87,12 +89,14 @@ export default function PhilosophySection() {
             className="group cursor-pointer"
           >
             <div className="aspect-[4/3] bg-black-mantle mb-4 overflow-hidden relative">
-              <div className="w-full h-full flex items-center justify-center text-white font-helvetica text-sm md:text-base">
-                Gallery
-              </div>
+              <img
+                src="/assets/LifeandStories.png"
+                alt="Life and Stories"
+                className="w-full h-full object-cover"
+              />
             </div>
             <h5 className="text-white font-helvetica text-2xl">
-              Gallery <span className="text-xs md:text-sm">(Self)</span>
+              Life and stories 
             </h5>
           </div>
         </div>
