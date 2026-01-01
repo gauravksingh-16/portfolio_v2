@@ -11,7 +11,7 @@ export default function Loader({ onLoadComplete }: LoaderProps) {
   const [isExiting, setIsExiting] = useState(false);
 
   useEffect(() => {
-    const minLoadTime = 2000; // 2 seconds minimum
+    const minLoadTime = 1000; // 2 seconds minimum
     const startTime = Date.now();
 
     // Simulate resource loading

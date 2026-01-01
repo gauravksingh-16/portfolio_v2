@@ -23,13 +23,13 @@ export const projects: Project[] = [
         published: false
     },
     {
-        id: "camonk-profile-onboarding",
+        id: "camonk-nux",
         title: "Redesigning new user onboarding",
         company: "CA Monk",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        image: "/placeholder-project-2.jpg",
+        description: "Streamlined the first-time user experience with intuitive flow, reducing drop-off rates and helping users to activate faster.",
+        image: "/assets/projects/CaMonk-nux.png",
         protected: false,
-        link: "/projects/camonk-profile-onboarding",
+        link: "/projects/camonk-nux",
         featured: true,
         published: false
     },
