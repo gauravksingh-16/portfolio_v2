@@ -1,12 +1,21 @@
 export function StructuredData() {
-  const structuredData = {
+  const personData = {
     "@context": "https://schema.org",
     "@type": "Person",
+    "@id": "https://gauravksingh.vercel.app/#person",
     name: "Gaurav Kumar Singh",
+    givenName: "Gaurav",
+    familyName: "Singh",
     jobTitle: "Product Designer",
-    description: "Product designer based in India creating seamless, human-centered experiences through UX, UI, and visual design.",
+    description:
+      "Product designer based in India creating seamless, human-centered experiences through UX, UI, and visual design.",
     url: "https://gauravksingh.vercel.app",
-    image: "https://gauravksingh.vercel.app/assets/my image.png",
+    image: {
+      "@type": "ImageObject",
+      url: "https://gauravksingh.vercel.app/assets/my%20image.png",
+      width: 1200,
+      height: 630,
+    },
     sameAs: [
       "https://www.linkedin.com/in/gauravksingh16/",
       "https://www.behance.net/gauravsingh_16",
@@ -17,8 +26,8 @@ export function StructuredData() {
       addressCountry: "IN",
       addressRegion: "India",
     },
-    email: "gauravkumarsingh3360@gmail.com",
-    telephone: "+917970755957",
+    email: "mailto:gauravkumarsingh3360@gmail.com",
+    telephone: "+91-7970755957",
     knowsAbout: [
       "Product Design",
       "UX Design",
@@ -31,31 +40,51 @@ export function StructuredData() {
       "Prototyping",
       "Wireframing",
     ],
-    alumniOf: {
-      "@type": "Organization",
-      name: "Design Education",
+  };
+
+  const websiteData = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://gauravksingh.vercel.app/#website",
+    url: "https://gauravksingh.vercel.app",
+    name: "Gaurav Kumar Singh Portfolio",
+    description:
+      "Product designer portfolio showcasing UX, UI, and visual design work.",
+    publisher: {
+      "@id": "https://gauravksingh.vercel.app/#person",
     },
-    worksFor: [
-      {
-        "@type": "Organization",
-        name: "CA Monk",
-        jobTitle: "Product Designer",
-        startDate: "2025",
-      },
-      {
-        "@type": "Organization",
-        name: "Lakhani Financial Services",
-        jobTitle: "Communications Designer",
-        startDate: "2023",
-        endDate: "2024",
-      },
-    ],
+    inLanguage: "en-US",
+  };
+
+  const profilePageData = {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "@id": "https://gauravksingh.vercel.app/#profilepage",
+    url: "https://gauravksingh.vercel.app",
+    name: "Gaurav Kumar Singh | Product Designer & UX/UI Designer",
+    description:
+      "Product designer based in India creating seamless, human-centered experiences through UX, UI, and visual design.",
+    mainEntity: {
+      "@id": "https://gauravksingh.vercel.app/#person",
+    },
+    dateCreated: "2024-01-01",
+    dateModified: new Date().toISOString().split("T")[0],
   };
 
   return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-    />
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personData) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteData) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(profilePageData) }}
+      />
+    </>
   );
 }
