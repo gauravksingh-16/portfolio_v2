@@ -89,7 +89,6 @@ body::before {
     src: url("/fonts/Helvetica/HelveticaNeueUltraLight.otf") format("opentype");
     font-weight: 100;
     font-style: normal;
-    font-display: swap;
 }
 
 @font-face {
@@ -97,7 +96,6 @@ body::before {
     src: url("/fonts/Helvetica/HelveticaNeueUltraLightItalic.otf") format("opentype");
     font-weight: 100;
     font-style: italic;
-    font-display: swap;
 }
 
 @font-face {
@@ -105,7 +103,6 @@ body::before {
     src: url("/fonts/Helvetica/HelveticaNeueThin.otf") format("opentype");
     font-weight: 200;
     font-style: normal;
-    font-display: swap;
 }
 
 @font-face {
@@ -113,7 +110,6 @@ body::before {
     src: url("/fonts/Helvetica/HelveticaNeueThinItalic.otf") format("opentype");
     font-weight: 200;
     font-style: italic;
-    font-display: swap;
 }
 
 @font-face {
@@ -121,7 +117,6 @@ body::before {
     src: url("/fonts/Helvetica/HelveticaNeueLight.otf") format("opentype");
     font-weight: 300;
     font-style: normal;
-    font-display: swap;
 }
 
 @font-face {
@@ -129,7 +124,6 @@ body::before {
     src: url("/fonts/Helvetica/HelveticaNeueLightItalic.otf") format("opentype");
     font-weight: 300;
     font-style: italic;
-    font-display: swap;
 }
 
 @font-face {
@@ -137,7 +131,6 @@ body::before {
     src: url("/fonts/Helvetica/HelveticaNeueRoman.otf") format("opentype");
     font-weight: 400;
     font-style: normal;
-    font-display: swap;
 }
 
 @font-face {
@@ -145,7 +138,6 @@ body::before {
     src: url("/fonts/Helvetica/HelveticaNeueItalic.ttf") format("truetype");
     font-weight: 400;
     font-style: italic;
-    font-display: swap;
 }
 
 @font-face {
@@ -153,7 +145,6 @@ body::before {
     src: url("/fonts/Helvetica/HelveticaNeueMedium.otf") format("opentype");
     font-weight: 500;
     font-style: normal;
-    font-display: swap;
 }
 
 @font-face {
@@ -161,7 +152,6 @@ body::before {
     src: url("/fonts/Helvetica/HelveticaNeueMediumItalic.otf") format("opentype");
     font-weight: 500;
     font-style: italic;
-    font-display: swap;
 }
 
 @font-face {
@@ -169,7 +159,6 @@ body::before {
     src: url("/fonts/Helvetica/HelveticaNeueBold.otf") format("opentype");
     font-weight: 700;
     font-style: normal;
-    font-display: swap;
 }
 
 @font-face {
@@ -177,7 +166,6 @@ body::before {
     src: url("/fonts/Helvetica/HelveticaNeueBoldItalic.otf") format("opentype");
     font-weight: 700;
     font-style: italic;
-    font-display: swap;
 }
 
 @font-face {
@@ -185,7 +173,6 @@ body::before {
     src: url("/fonts/Helvetica/HelveticaNeueHeavy.otf") format("opentype");
     font-weight: 800;
     font-style: normal;
-    font-display: swap;
 }
 
 @font-face {
@@ -193,7 +180,6 @@ body::before {
     src: url("/fonts/Helvetica/HelveticaNeueHeavyItalic.otf") format("opentype");
     font-weight: 800;
     font-style: italic;
-    font-display: swap;
 }
 
 @font-face {
@@ -201,7 +187,6 @@ body::before {
     src: url("/fonts/Helvetica/HelveticaNeueBlack.otf") format("opentype");
     font-weight: 900;
     font-style: normal;
-    font-display: swap;
 }
 
 @font-face {
@@ -209,7 +194,6 @@ body::before {
     src: url("/fonts/Helvetica/HelveticaNeueBlackItalic.otf") format("opentype");
     font-weight: 900;
     font-style: italic;
-    font-display: swap;
 }
 
 @font-face {
@@ -217,7 +201,6 @@ body::before {
     src: url("/fonts/Denton/DentonTextCondTest-Thin.otf") format("opentype");
     font-weight: 100;
     font-style: normal;
-    font-display: swap;
 }
 
 @font-face {
@@ -225,7 +208,6 @@ body::before {
     src: url("/fonts/Denton/DentonTextCondTest-ThinItalic.otf") format("opentype");
     font-weight: 100;
     font-style: italic;
-    font-display: swap;
 }
 
 @font-face {
@@ -233,7 +215,6 @@ body::before {
     src: url("/fonts/Denton/DentonTextCondTest-Light.otf") format("opentype");
     font-weight: 300;
     font-style: normal;
-    font-display: swap;
 }
 
 @font-face {
@@ -241,7 +222,6 @@ body::before {
     src: url("/fonts/Denton/DentonTextCondTest-LightItalic.otf") format("opentype");
     font-weight: 300;
     font-style: italic;
-    font-display: swap;
 }
 
 @font-face {
@@ -249,7 +229,6 @@ body::before {
     src: url("/fonts/Denton/DentonTextCondTest-Regular.otf") format("opentype");
     font-weight: 400;
     font-style: normal;
-    font-display: swap;
 }
 
 @font-face {
@@ -257,7 +236,6 @@ body::before {
     src: url("/fonts/Denton/DentonTextCondTest-RegularItalic.otf") format("opentype");
     font-weight: 400;
     font-style: italic;
-    font-display: swap;
 }
 
 @font-face {
@@ -265,7 +243,6 @@ body::before {
     src: url("/fonts/Denton/DentonTextCondTest-Medium.otf") format("opentype");
     font-weight: 500;
     font-style: normal;
-    font-display: swap;
 }
 
 @font-face {
@@ -273,7 +250,6 @@ body::before {
     src: url("/fonts/Denton/DentonTextCondTest-MediumItalic.otf") format("opentype");
     font-weight: 500;
     font-style: italic;
-    font-display: swap;
 }
 
 @font-face {
@@ -281,7 +257,6 @@ body::before {
     src: url("/fonts/Denton/DentonTextCondTest-Bold.otf") format("opentype");
     font-weight: 700;
     font-style: normal;
-    font-display: swap;
 }
 
 @font-face {
@@ -289,7 +264,6 @@ body::before {
     src: url("/fonts/Denton/DentonTextCondTest-BoldItalic.otf") format("opentype");
     font-weight: 700;
     font-style: italic;
-    font-display: swap;
 }
 
 @font-face {
@@ -297,7 +271,6 @@ body::before {
     src: url("/fonts/Denton/DentonTextCondTest-ExtraBold.otf") format("opentype");
     font-weight: 800;
     font-style: normal;
-    font-display: swap;
 }
 
 @font-face {
@@ -305,7 +278,6 @@ body::before {
     src: url("/fonts/Denton/DentonTextCondTest-ExtraBoldItalic.otf") format("opentype");
     font-weight: 800;
     font-style: italic;
-    font-display: swap;
 }
 
 @font-face {
@@ -313,7 +285,6 @@ body::before {
     src: url("/fonts/Denton/DentonTextCondTest-Black.otf") format("opentype");
     font-weight: 900;
     font-style: normal;
-    font-display: swap;
 }
 
 @font-face {
@@ -321,7 +292,6 @@ body::before {
     src: url("/fonts/Denton/DentonTextCondTest-BlackItalic.otf") format("opentype");
     font-weight: 900;
     font-style: italic;
-    font-display: swap;
 }
 
 .font-helvetica {

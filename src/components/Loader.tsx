@@ -11,38 +11,38 @@ export default function Loader({ onLoadComplete }: LoaderProps) {
   const [isExiting, setIsExiting] = useState(false);
 
   useEffect(() => {
-    const minLoadTime = 800; // Reduced to 800ms for faster perceived load
+    const minLoadTime = 1000; // 2 seconds minimum
     const startTime = Date.now();
 
-    // Faster progress simulation
+    // Simulate resource loading
     const interval = setInterval(() => {
       setProgress((prev) => {
         if (prev >= 100) {
           clearInterval(interval);
           return 100;
         }
-        // Faster increment (reaches 100 in ~1.5 seconds)
-        return prev + 4;
+        // Increment progress (reaches 100 in ~3 seconds)
+        return prev + 2;
       });
-    }, 50);
+    }, 60);
 
     // Check if document is fully loaded
     const checkComplete = () => {
       const elapsed = Date.now() - startTime;
       if (document.readyState === "complete" && elapsed >= minLoadTime && progress >= 100) {
         setIsExiting(true);
-        setTimeout(onLoadComplete, 500); // Faster exit animation
+        setTimeout(onLoadComplete, 800); // Wait for animation to complete
       }
     };
 
     window.addEventListener("load", checkComplete);
 
-    // Fallback: complete after minimum time
+    // Fallback: complete after minimum time even if not at 100%
     const timeout = setTimeout(() => {
       setProgress(100);
       setIsExiting(true);
-      setTimeout(onLoadComplete, 500);
-    }, minLoadTime + 300);
+      setTimeout(onLoadComplete, 800); // Wait for animation to complete
+    }, minLoadTime + 500);
 
     return () => {
       clearInterval(interval);

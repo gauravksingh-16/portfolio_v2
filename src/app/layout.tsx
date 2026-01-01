@@ -76,39 +76,6 @@ export default function RootLayout({
     <html lang="en" className="overflow-x-hidden">
       <head>
         <link rel="canonical" href="https://gauravksingh.vercel.app" />
-        {/* Preload critical fonts */}
-        <link
-          rel="preload"
-          href="/fonts/Helvetica/HelveticaNeueMedium.otf"
-          as="font"
-          type="font/otf"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="preload"
-          href="/fonts/Denton/DentonTextCondTest-MediumItalic.otf"
-          as="font"
-          type="font/otf"
-          crossOrigin="anonymous"
-        />
-        {/* Preload LCP image for mobile */}
-        <link
-          rel="preload"
-          as="image"
-          href="/assets/my image-mobile.png"
-          media="(max-width: 767px)"
-        />
-        {/* Preload LCP image for desktop */}
-        <link
-          rel="preload"
-          as="image"
-          href="/assets/my image.png"
-          media="(min-width: 768px)"
-        />
-        {/* DNS prefetch for external resources */}
-        <link rel="dns-prefetch" href="https://www.linkedin.com" />
-        <link rel="dns-prefetch" href="https://www.behance.net" />
-        <link rel="dns-prefetch" href="https://github.com" />
         <StructuredData />
       </head>
       <body className="overflow-x-hidden">
