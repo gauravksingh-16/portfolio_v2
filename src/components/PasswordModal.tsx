@@ -46,6 +46,9 @@ export default function PasswordModal({ project, onClose }: PasswordModalProps) 
             transition={{ duration: 0.2, ease: "easeOut" }}
             className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4"
             onClick={onClose}
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="password-modal-title"
         >
             <motion.div
                 initial={{ opacity: 0, scale: 0.95, y: 20 }}
@@ -55,25 +58,28 @@ export default function PasswordModal({ project, onClose }: PasswordModalProps) 
                 className="bg-white p-8 md:p-12 rounded-lg max-w-md w-full"
                 onClick={(e) => e.stopPropagation()}
             >
-                <h3 className="font-helvetica text-xl md:text-2xl mb-2 text-black">
+                <h3 id="password-modal-title" className="font-helvetica text-xl md:text-2xl mb-2 text-black">
                     {project.title}
                 </h3>
                 <p className="font-helvetica text-xs md:text-sm text-black-mantle mb-6 md:mb-8">
                     This project is password protected
                 </p>
 
-                <form onSubmit={handlePasswordSubmit}>
+                <form onSubmit={handlePasswordSubmit} aria-label="Password verification form">
+                    <label htmlFor="project-password" className="sr-only">Enter password</label>
                     <input
+                        id="project-password"
                         type="password"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         placeholder="Enter password"
+                        aria-describedby={error ? "password-error" : undefined}
                         className="w-full px-0 py-3 border-0 border-b border-black-mantle font-helvetica text-sm md:text-base text-black mb-4 focus:outline-none focus:border-black bg-transparent"
                         autoFocus
                     />
 
                     {error && (
-                        <p className="text-tangerine text-xs md:text-sm font-helvetica mb-4">{error}</p>
+                        <p id="password-error" role="alert" className="text-tangerine text-xs md:text-sm font-helvetica mb-4">{error}</p>
                     )}
 
                     <button

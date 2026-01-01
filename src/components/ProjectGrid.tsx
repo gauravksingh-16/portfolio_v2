@@ -57,10 +57,14 @@ export default function ProjectGrid({ projects, showFeaturedBadge = false, viewM
                 <div className="relative">
                     <div className="space-y-0">
                         {projects.map((project, index) => (
-                            <div
+                            <article
                                 key={index}
+                                role="button"
+                                tabIndex={0}
+                                aria-label={`View project: ${project.title} by ${project.company}`}
                                 className="cursor-pointer border-b border-gray-200 py-8 md:py-12 flex flex-col md:flex-row md:justify-between md:items-center"
                                 onClick={() => handleProjectClick(project)}
+                                onKeyDown={(e) => e.key === 'Enter' && handleProjectClick(project)}
                                 onMouseEnter={() => setHoveredIndex(index)}
                                 onMouseLeave={() => setHoveredIndex(null)}
                                 onMouseMove={handleMouseMove}
@@ -76,7 +80,7 @@ export default function ProjectGrid({ projects, showFeaturedBadge = false, viewM
                                 <div className="text-base md:text-base text-black-mantle font-helvetica">
                                     ({project.company})
                                 </div>
-                            </div>
+                            </article>
                         ))}
                     </div>
 
@@ -121,10 +125,14 @@ export default function ProjectGrid({ projects, showFeaturedBadge = false, viewM
         <>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-8">
                 {projects.map((project, index) => (
-                    <div
+                    <article
                         key={index}
+                        role="button"
+                        tabIndex={0}
+                        aria-label={`View project: ${project.title} by ${project.company}`}
                         className="group cursor-pointer"
                         onClick={() => handleProjectClick(project)}
+                        onKeyDown={(e) => e.key === 'Enter' && handleProjectClick(project)}
                     >
                         <div className="aspect-[4/3] bg-black-mantle mb-4 md:mb-6 overflow-hidden">
                             <img
@@ -146,7 +154,7 @@ export default function ProjectGrid({ projects, showFeaturedBadge = false, viewM
                                 {project.description}
                             </p>
                         </div>
-                    </div>
+                    </article>
                 ))}
             </div>
 

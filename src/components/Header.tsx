@@ -69,6 +69,9 @@ export default function Header({ isInHero, currentSection, hideInFooter }: Heade
             onClick={() => setIsMenuOpen(true)}
             className="md:hidden font-helvetica text-xs"
             style={{ letterSpacing: "-0.02em" }}
+            aria-label="Open navigation menu"
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-menu"
           >
             <span className="font-denton font-medium italic">(+)</span> MENU
           </button>
@@ -77,6 +80,10 @@ export default function Header({ isInHero, currentSection, hideInFooter }: Heade
 
       {/* Mobile Sliding Menu */}
       <div
+        id="mobile-menu"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Navigation menu"
         className={`md:hidden fixed inset-0 bg-white z-[100] transition-transform duration-500 ${isMenuOpen ? "translate-x-0" : "translate-x-full"
           }`}
       >
@@ -91,19 +98,21 @@ export default function Header({ isInHero, currentSection, hideInFooter }: Heade
               onClick={() => setIsMenuOpen(false)}
               className="font-helvetica text-black text-xs"
               style={{ letterSpacing: "-0.02em" }}
+              aria-label="Close navigation menu"
             >
               <span className="font-denton font-medium italic">(-)</span> CLOSE
             </button>
           </div>
 
           {/* Navigation Items */}
-          <nav className="flex flex-col space-y-2 mb-auto">
+          <nav className="flex flex-col space-y-2 mb-auto" aria-label="Main navigation">
             {navItems.map((item, index) => (
               <button
                 key={item.id}
                 onClick={() => handleNavClick(index)}
                 className="text-left font-helvetica text-[40px] leading-tight text-black"
                 style={{ letterSpacing: "-0.02em" }}
+                aria-label={`Navigate to ${item.mobileLabel}`}
               >
                 <span className="font-denton font-medium italic">({item.id.replace('0', '')})</span> {item.mobileLabel}
               </button>

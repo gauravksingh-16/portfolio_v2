@@ -78,7 +78,12 @@ export default function RootLayout({
         <link rel="canonical" href="https://gauravksingh.vercel.app" />
         <StructuredData />
       </head>
-      <body className="overflow-x-hidden">{children}</body>
+      <body className="overflow-x-hidden">
+        <a href="#main-content" className="skip-link">
+          Skip to main content
+        </a>
+        {children}
+      </body>
     </html>
   );
 }

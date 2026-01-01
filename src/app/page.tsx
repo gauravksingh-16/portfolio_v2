@@ -113,7 +113,7 @@ export default function Home() {
 
   return (
     <>
-      <main className="relative overflow-x-hidden">
+      <main id="main-content" className="relative overflow-x-hidden">
         <div 
           className={`transition-opacity duration-700 ${
             !isLoading ? "opacity-100" : "opacity-0 pointer-events-none"
