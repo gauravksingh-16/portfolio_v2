@@ -142,11 +142,19 @@ export default function ServicesSection() {
                                     ))}
                                 </ul>
 
-                                {/* Image Placeholder */}
-                                <div className="w-[150px] h-[150px] bg-black-mantle flex-shrink-0">
-                                    <div className="w-full h-full flex items-center justify-center text-white font-helvetica text-xs">
-                                        Image
-                                    </div>
+                                {/* Service Image */}
+                                <div className="w-[150px] h-[150px] flex-shrink-0 overflow-hidden">
+                                    <img
+                                        src={
+                                            index === 0
+                                                ? "/assets/services/UX_UI.jpg"
+                                                : index === 1
+                                                ? "/assets/services/Creative.jpg"
+                                                : "/assets/services/Development.jpg"
+                                        }
+                                        alt={service.title}
+                                        className="w-full h-full object-cover"
+                                    />
                                 </div>
                             </div>
 
@@ -199,11 +207,19 @@ export default function ServicesSection() {
                                             ))}
                                         </ul>
 
-                                        {/* Image Placeholder */}
-                                        <div className="w-full aspect-[16/9] bg-black-mantle mb-4">
-                                            <div className="w-full h-full flex items-center justify-center text-white font-helvetica text-xs">
-                                                Image
-                                            </div>
+                                        {/* Service Image */}
+                                        <div className="w-full aspect-[16/9] mb-4 overflow-hidden">
+                                            <img
+                                                src={
+                                                    index === 0
+                                                        ? "/assets/services/UX_UI.jpg"
+                                                        : index === 1
+                                                        ? "/assets/services/Creative.jpg"
+                                                        : "/assets/services/Development.jpg"
+                                                }
+                                                alt={service.title}
+                                                className="w-full h-full object-cover"
+                                            />
                                         </div>
 
                                         {/* Description */}

@@ -83,9 +83,9 @@ export default function PhilosophySection() {
             </h5>
           </div>
 
-          {/* Gallery */}
+          {/* Gallery - Coming Soon */}
           <div
-            onClick={() => window.location.href = '/gallery'}
+            onClick={() => window.location.href = '/coming-soon'}
             className="group cursor-pointer"
           >
             <div className="aspect-[4/3] bg-black-mantle mb-4 overflow-hidden relative">
