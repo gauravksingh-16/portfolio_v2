@@ -34,24 +34,24 @@ export const projects: Project[] = [
         published: false
     },
     {
-        id: "investor-pitch",
-        title: "Investor Pitch Deck",
-        company: "LFS",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        image: "/placeholder-project-3.jpg",
-        protected: true,
-        link: "/projects/investor-pitch",
+        id: "resume-builder-redesign",
+        title: "Redesigning for clarity",
+        company: "CA Monk",
+        description: "Redesigning a complex resume builder into a frictionless, minimal experience that prioritizes user focus and ease of completion.",
+        image: "/assets/projects/resume-builder-redesign.png",
+        protected: false,
+        link: "/projects/resume-builder-redesign",
         featured: true,
         published: false
     },
     {
-        id: "marketing-materials",
-        title: "Marketing Materials",
-        company: "LFS",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        image: "/placeholder-project-4.jpg",
+        id: "mentorship-portal-design",
+        title: "Mentorship Portal (0 → 1)",
+        company: "CA Monk",
+        description: "Building an end-to-end mentorship ecosystem from scratch, designing tailored workflows for users to facilitate seamless connection and growth.",
+        image: "/assets/projects/mentorship-portal-design.png",
         protected: false,
-        link: "/projects/marketing-materials",
+        link: "/projects/mentorship-portal-design",
         featured: true,
         published: false
     }
