@@ -55,7 +55,7 @@ export default function AboutSection() {
             onMouseMove={handleMouseMove}
             onClick={togglePlay}
           >
-            <span className="text-white font-helvetica text-sm md:text-xl">Video Placeholder</span>
+            <span className="text-white font-helvetica text-sm md:text-xl">Coming Soon</span>
 
             {/* Play/Pause Button - Desktop: follows mouse on hover, Mobile: fixed bottom-right always visible */}
 
