@@ -104,7 +104,7 @@ export default function AboutSection() {
               Hello! I&apos;m
               <br />Gaurav Kumar Singh
             </p>
-            <a href="#" className="text-xs md:text-sm font-bold font-helvetica text-black inline-block mt-1">
+            <a href="/assets/Gaurav_Singh_ProductDesign_Resume.pdf" target="_blank" rel="noopener noreferrer" className="text-xs md:text-sm font-bold font-helvetica text-black inline-block mt-1">
               <span className="font-denton italic">(re)</span> Get my Resume
             </a>
           </div>

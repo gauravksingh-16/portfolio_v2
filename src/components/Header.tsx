@@ -121,7 +121,7 @@ export default function Header({ isInHero, currentSection, hideInFooter }: Heade
 
           {/* Social Links */}
           <div className="text-right mt-auto space-y-1">
-            <a href="#" className="block font-helvetica text-sm text-black">
+            <a href="/assets/Gaurav_Singh_ProductDesign_Resume.pdf" target="_blank" rel="noopener noreferrer" className="block font-helvetica text-sm text-black">
               <span className="font-denton font-medium italic">(re)</span> RESUME
             </a>
             <a href="https://www.linkedin.com/in/gauravksingh16/" target="_blank" rel="noopener noreferrer" className="block font-helvetica text-sm text-black">

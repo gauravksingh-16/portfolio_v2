@@ -7,7 +7,7 @@ interface FixedFooterProps {
 
 export default function FixedFooter({ isInHero, hideInFooter }: FixedFooterProps) {
   const socialLinks = [
-    { id: "re", label: "RESUME", href: "#" },
+    { id: "re", label: "RESUME", href: "/assets/Gaurav_Singh_ProductDesign_Resume.pdf" },
     { id: "in", label: "LINKEDIN", href: "https://www.linkedin.com/in/gauravksingh16/" },
     { id: "be", label: "BEHANCE", href: "https://www.behance.net/gauravsingh_16" },
     { id: "gh", label: "GITHUB", href: "https://github.com/gauravksingh-16" },
