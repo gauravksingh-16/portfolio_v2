@@ -31,7 +31,7 @@ export const projects: Project[] = [
         protected: false,
         link: "/projects/camonk-nux",
         featured: true,
-        published: false
+        published: true
     },
     {
         id: "resume-builder-redesign",

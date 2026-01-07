@@ -20,12 +20,15 @@ export default function Header({ isInHero, currentSection, hideInFooter }: Heade
   ];
 
   const handleNavClick = (index: number) => {
-    const section = document.getElementById(`section-${index}`);
-    if (section) {
-      // If section exists on current page, scroll to it
-      section.scrollIntoView({ behavior: "smooth" });
+    // Check if we're on the homepage by looking for the homepage sections
+    const homepageSection = document.getElementById(`section-${index}`);
+    const isHomepage = window.location.pathname === "/" || window.location.pathname === "";
+    
+    if (isHomepage && homepageSection) {
+      // If on homepage and section exists, scroll to it
+      homepageSection.scrollIntoView({ behavior: "smooth" });
     } else {
-      // If section doesn't exist, navigate to home page with section hash
+      // If not on homepage or section doesn't exist, navigate to home page with section hash
       window.location.href = `/#section-${index}`;
     }
     setIsMenuOpen(false);
