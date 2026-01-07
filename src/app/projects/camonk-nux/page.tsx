@@ -106,7 +106,6 @@ const researchQuestions = [
 const impactMetrics = [
     { title: "18% Reduction in Sign-up Abandonment", description: 'By surfacing the "50 Coin Reward" before the high-friction OTP step, we successfully shifted user perception. Users stopped seeing the phone number request as a data-grab and started seeing it as a necessary step to "secure their wallet."' },
     { title: "28% Uplift in Profile Completion", description: "The combination of the Dashboard Nudge and the 7-Day Retention Modal created a powerful loop. Users who initially skipped the profile setup were successfully recaptured within the first week, driving higher activation rates." },
-    { title: "Zero-Friction Market Expansion", description: "This was a critical win for the business strategy. We onboarded our first cohort of non-CA users (MBA & Engineering) with a 0% support ticket rate regarding form confusion. The modular profile successfully removed the identity barrier, allowing the business to scale into new verticals instantly." }
 ];
 
 const designSections = [
