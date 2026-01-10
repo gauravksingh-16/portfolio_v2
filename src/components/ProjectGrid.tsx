@@ -54,11 +54,14 @@ export default function ProjectGrid({ projects, showFeaturedBadge = false, viewM
     };
 
     const handleGridMouseMove = (e: React.MouseEvent<HTMLElement>) => {
-        const rect = e.currentTarget.getBoundingClientRect();
-        setGridMousePosition({
-            x: e.clientX - rect.left,
-            y: e.clientY - rect.top
-        });
+        const imageContainer = e.currentTarget.querySelector('.aspect-\\[4\\/3\\]');
+        if (imageContainer) {
+            const rect = imageContainer.getBoundingClientRect();
+            setGridMousePosition({
+                x: e.clientX - rect.left,
+                y: e.clientY - rect.top
+            });
+        }
     };
 
     if (viewMode === "list") {
@@ -97,16 +100,18 @@ export default function ProjectGrid({ projects, showFeaturedBadge = false, viewM
                     {/* Mouse-following image */}
                     {hoveredIndex !== null && (
                         <div
-                            className="hidden md:block fixed pointer-events-none z-50 w-64 h-48 bg-black-mantle shadow-2xl transition-opacity duration-300"
+                            className="hidden md:block fixed pointer-events-none z-50 w-64 h-48 shadow-2xl transition-opacity duration-300 overflow-hidden"
                             style={{
                                 left: `${mousePosition.x + 20}px`,
                                 top: `${mousePosition.y + 20}px`,
                                 transform: 'translate(0, -50%)',
                             }}
                         >
-                            <div className="w-full h-full flex items-center justify-center text-white font-helvetica text-sm">
-                                {projects[hoveredIndex].title}
-                            </div>
+                            <img
+                                src={projects[hoveredIndex].image}
+                                alt={projects[hoveredIndex].title}
+                                className="w-full h-full object-cover"
+                            />
                         </div>
                     )}
                 </div>
@@ -147,7 +152,7 @@ export default function ProjectGrid({ projects, showFeaturedBadge = false, viewM
                         onMouseLeave={() => setGridHoveredIndex(null)}
                         onMouseMove={handleGridMouseMove}
                     >
-                        <div className="aspect-[4/3] bg-black-mantle mb-4 md:mb-6 overflow-hidden relative">
+                        <div className="aspect-[4/3] bg-black-mantle mb-4 md:mb-6 overflow-visible relative">
                             <img
                                 src={project.image}
                                 alt={project.title}
@@ -155,18 +160,17 @@ export default function ProjectGrid({ projects, showFeaturedBadge = false, viewM
                             />
 
                             {/* Mouse-following tooltip */}
-                            {gridHoveredIndex === index && (
-                                <div
-                                    className="hidden md:block absolute pointer-events-none z-10 px-3 py-1.5 bg-black text-white font-helvetica text-xs whitespace-nowrap transition-opacity duration-150"
-                                    style={{
-                                        left: `${gridMousePosition.x}px`,
-                                        top: `${gridMousePosition.y}px`,
-                                        transform: 'translate(-50%, -100%) translateY(-8px)',
-                                    }}
-                                >
-                                    {project.published ? "View Work" : "Coming Soon"}
-                                </div>
-                            )}
+                            <div
+                                className={`hidden md:block absolute pointer-events-none z-50 px-3 py-1.5 bg-black text-white font-helvetica text-xs whitespace-nowrap transition-opacity duration-150 ${gridHoveredIndex === index ? 'opacity-100' : 'opacity-0'
+                                    }`}
+                                style={{
+                                    left: `${gridMousePosition.x}px`,
+                                    top: `${gridMousePosition.y}px`,
+                                    transform: 'translate(-50%, -50%)',
+                                }}
+                            >
+                                {project.published ? "View Work" : "Coming Soon"}
+                            </div>
                         </div>
 
                         <div>
