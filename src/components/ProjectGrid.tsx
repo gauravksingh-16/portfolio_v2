@@ -22,6 +22,8 @@ export default function ProjectGrid({ projects, showFeaturedBadge = false, viewM
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
     const [pdfUrl, setPdfUrl] = useState<string | null>(null);
     const [selectedProjectId, setSelectedProjectId] = useState<string | null>(null);
+    const [gridHoveredIndex, setGridHoveredIndex] = useState<number | null>(null);
+    const [gridMousePosition, setGridMousePosition] = useState({ x: 0, y: 0 });
 
     const handleProjectClick = (project: Project) => {
         // Check if project is unpublished first - navigate to coming soon page
@@ -29,7 +31,7 @@ export default function ProjectGrid({ projects, showFeaturedBadge = false, viewM
             router.push("/coming-soon");
             return;
         }
-        
+
         if (project.protected) {
             setSelectedProject(project);
         } else if (project.link) {
@@ -49,6 +51,14 @@ export default function ProjectGrid({ projects, showFeaturedBadge = false, viewM
 
     const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
         setMousePosition({ x: e.clientX, y: e.clientY });
+    };
+
+    const handleGridMouseMove = (e: React.MouseEvent<HTMLElement>) => {
+        const rect = e.currentTarget.getBoundingClientRect();
+        setGridMousePosition({
+            x: e.clientX - rect.left,
+            y: e.clientY - rect.top
+        });
     };
 
     if (viewMode === "list") {
@@ -130,16 +140,33 @@ export default function ProjectGrid({ projects, showFeaturedBadge = false, viewM
                         role="button"
                         tabIndex={0}
                         aria-label={`View project: ${project.title} by ${project.company}`}
-                        className="group cursor-pointer"
+                        className="group cursor-pointer relative"
                         onClick={() => handleProjectClick(project)}
                         onKeyDown={(e) => e.key === 'Enter' && handleProjectClick(project)}
+                        onMouseEnter={() => setGridHoveredIndex(index)}
+                        onMouseLeave={() => setGridHoveredIndex(null)}
+                        onMouseMove={handleGridMouseMove}
                     >
-                        <div className="aspect-[4/3] bg-black-mantle mb-4 md:mb-6 overflow-hidden">
+                        <div className="aspect-[4/3] bg-black-mantle mb-4 md:mb-6 overflow-hidden relative">
                             <img
                                 src={project.image}
                                 alt={project.title}
                                 className="w-full h-full object-cover"
                             />
+
+                            {/* Mouse-following tooltip */}
+                            {gridHoveredIndex === index && (
+                                <div
+                                    className="hidden md:block absolute pointer-events-none z-10 px-3 py-1.5 bg-black text-white font-helvetica text-xs whitespace-nowrap transition-opacity duration-150"
+                                    style={{
+                                        left: `${gridMousePosition.x}px`,
+                                        top: `${gridMousePosition.y}px`,
+                                        transform: 'translate(-50%, -100%) translateY(-8px)',
+                                    }}
+                                >
+                                    {project.published ? "View Work" : "Coming Soon"}
+                                </div>
+                            )}
                         </div>
 
                         <div>
