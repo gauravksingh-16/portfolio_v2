@@ -12,17 +12,6 @@ export interface Project {
 
 export const projects: Project[] = [
     {
-        id: "monk-design-system",
-        title: "Monk Design System",
-        company: "CA Monk",
-        description: "The official design system for CA Monk, providing a unified visual language and reusable components for consistent brand experiences.",
-        image: "/assets/projects/Monk-design-system.png",
-        protected: true,
-        link: "/projects/monk-design-system",
-        featured: true,
-        published: false
-    },
-    {
         id: "camonk-nux",
         title: "Redesigning new user onboarding",
         company: "CA Monk",
@@ -43,6 +32,17 @@ export const projects: Project[] = [
         link: "/projects/resume-builder-redesign",
         featured: true,
         published: true
+    },
+    {
+        id: "monk-design-system",
+        title: "Monk Design System",
+        company: "CA Monk",
+        description: "The official design system for CA Monk, providing a unified visual language and reusable components for consistent brand experiences.",
+        image: "/assets/projects/Monk-design-system.png",
+        protected: true,
+        link: "/projects/monk-design-system",
+        featured: true,
+        published: false
     },
     {
         id: "mentorship-portal-design",
