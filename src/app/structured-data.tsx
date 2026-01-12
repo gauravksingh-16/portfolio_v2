@@ -71,6 +71,42 @@ export function StructuredData() {
     dateModified: new Date().toISOString().split("T")[0],
   };
 
+  const portfolioData = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "@id": "https://gauravksingh.vercel.app/projects#collection",
+    url: "https://gauravksingh.vercel.app/projects",
+    name: "Design Projects | Gaurav Kumar Singh",
+    description: "UX/UI design case studies and projects by Gaurav Kumar Singh",
+    mainEntity: {
+      "@type": "ItemList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          item: {
+            "@type": "Article",
+            name: "AI Resume Builder Redesign",
+            description: "Transforming a desktop-heavy resume builder into a mobile-first experience with 33% faster creation time.",
+            url: "https://gauravksingh.vercel.app/projects/resume-builder-redesign",
+            author: { "@id": "https://gauravksingh.vercel.app/#person" },
+          },
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          item: {
+            "@type": "Article",
+            name: "User Onboarding Redesign",
+            description: "Redesigning CA Monk's onboarding flow to reduce abandonment by 18% and boost profile completion by 28%.",
+            url: "https://gauravksingh.vercel.app/projects/camonk-nux",
+            author: { "@id": "https://gauravksingh.vercel.app/#person" },
+          },
+        },
+      ],
+    },
+  };
+
   return (
     <>
       <script
@@ -84,6 +120,10 @@ export function StructuredData() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(profilePageData) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(portfolioData) }}
       />
     </>
   );

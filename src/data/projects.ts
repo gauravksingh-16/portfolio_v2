@@ -42,7 +42,7 @@ export const projects: Project[] = [
         protected: false,
         link: "/projects/resume-builder-redesign",
         featured: true,
-        published: false
+        published: true
     },
     {
         id: "mentorship-portal-design",

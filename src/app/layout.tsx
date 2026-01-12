@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     siteName: "Gaurav Kumar Singh Portfolio",
     images: [
       {
-        url: "/assets/my image.png",
+        url: "/assets/my%20image.png",
         width: 1200,
         height: 630,
         alt: "Gaurav Kumar Singh - Product Designer",
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Gaurav Kumar Singh | Product Designer & UX/UI Designer",
     description: "Product designer based in India creating seamless, human-centered experiences through UX, UI, and visual design.",
-    images: ["/assets/my image.png"],
+    images: ["/assets/my%20image.png"],
     creator: "@gauravksingh",
   },
   verification: {

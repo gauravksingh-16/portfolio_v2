@@ -86,7 +86,7 @@ export default function ProjectGrid({ projects, showFeaturedBadge = false, viewM
                                     <h3 className="font-helvetica text-2xl md:text-4xl mb-2 md:mb-4 text-black">
                                         {project.title}
                                     </h3>
-                                    <p className="font-helvetica font-[500] text-sm md:text-base text-black-mantle leading-relaxed">
+                                    <p className="font-helvetica font-[400] text-sm md:text-base text-black-mantle leading-relaxed">
                                         {project.description}
                                     </p>
                                 </div>

@@ -49,9 +49,9 @@ const ImageContainer = ({ src, alt, className = "", noPadding = false }: { src: 
     </div>
 );
 
-const InsightItem = ({ icon, title, description }: { icon: string; title: string; description: string }) => (
+const InsightItem = ({ icon, title, description, iconAlt }: { icon: string; title: string; description: string; iconAlt?: string }) => (
     <div className="flex items-start gap-4">
-        <img src={`${ASSETS_PATH}/${icon}`} alt={`${title} icon`} className="w-10 h-10 md:w-12 md:h-12 flex-shrink-0" />
+        <img src={`${ASSETS_PATH}/${icon}`} alt={iconAlt || `${title} insight icon`} className="w-10 h-10 md:w-12 md:h-12 flex-shrink-0" />
         <Paragraph>
             <span className="font-[500] text-tangerine">{title}:</span> {description}
         </Paragraph>
@@ -61,7 +61,7 @@ const InsightItem = ({ icon, title, description }: { icon: string; title: string
 const QuoteItem = ({ quote, explanation }: { quote: string; explanation: string }) => (
     <div>
         <div className="flex items-start gap-4 mb-3">
-            <img src={`${ASSETS_PATH}/chat.png`} alt="Chat icon" className="w-8 h-8 md:w-10 md:h-10 flex-shrink-0" />
+            <img src={`${ASSETS_PATH}/chat.png`} alt="User interview quote icon" className="w-8 h-8 md:w-10 md:h-10 flex-shrink-0" />
             <p className="font-denton font-[400] italic text-base md:text-lg text-blue leading-relaxed">"{quote}"</p>
         </div>
         <Paragraph className="ml-12 md:ml-14">{explanation}</Paragraph>
@@ -70,14 +70,14 @@ const QuoteItem = ({ quote, explanation }: { quote: string; explanation: string 
 
 const QuestionItem = ({ question }: { question: string }) => (
     <div className="flex items-center gap-4">
-        <img src={`${ASSETS_PATH}/question.png`} alt="Question icon" className="w-8 h-8 md:w-10 md:h-10 flex-shrink-0" />
+        <img src={`${ASSETS_PATH}/question.png`} alt="Research question icon" className="w-8 h-8 md:w-10 md:h-10 flex-shrink-0" />
         <p className="font-denton font-[400] italic text-base md:text-lg text-black">{question}</p>
     </div>
 );
 
-const ImpactMetric = ({ title, description }: { title: string; description: string }) => (
+const ImpactMetric = ({ title, description, iconAlt }: { title: string; description: string; iconAlt?: string }) => (
     <div className="flex items-start gap-4">
-        <img src={`${ASSETS_PATH}/target.png`} alt="Target icon" className="w-10 h-10 md:w-12 md:h-12 flex-shrink-0" />
+        <img src={`${ASSETS_PATH}/target.png`} alt={iconAlt || `Impact metric: ${title}`} className="w-10 h-10 md:w-12 md:h-12 flex-shrink-0" />
         <div>
             <h3 className="font-helvetica font-[500] text-lg md:text-xl text-blue mb-2">{title}</h3>
             <Paragraph>{description}</Paragraph>
@@ -87,8 +87,8 @@ const ImpactMetric = ({ title, description }: { title: string; description: stri
 
 // Data
 const userInsights = [
-    { icon: "exit.png", title: "65% Drop-off at OTP", description: "The majority of users abandoned the flow the moment we asked for a phone number." },
-    { icon: "confused.png", title: "High Bounce Rate on Profile", description: "Non-CA users were reaching the profile page, seeing unrelated details, and bouncing off, killing conversion rates." }
+    { icon: "exit.png", title: "65% Drop-off at OTP", description: "The majority of users abandoned the flow the moment we asked for a phone number.", iconAlt: "Exit icon representing 65% user drop-off at OTP verification step" },
+    { icon: "confused.png", title: "High Bounce Rate on Profile", description: "Non-CA users were reaching the profile page, seeing unrelated details, and bouncing off, killing conversion rates.", iconAlt: "Confused user icon representing high bounce rate on profile page" }
 ];
 
 const userQuotes = [
@@ -104,16 +104,16 @@ const researchQuestions = [
 ];
 
 const impactMetrics = [
-    { title: "18% Reduction in Sign-up Abandonment", description: 'By surfacing the "50 Coin Reward" before the high-friction OTP step, we successfully shifted user perception. Users stopped seeing the phone number request as a data-grab and started seeing it as a necessary step to "secure their wallet."' },
-    { title: "28% Uplift in Profile Completion", description: "The combination of the Dashboard Nudge and the 7-Day Retention Modal created a powerful loop. Users who initially skipped the profile setup were successfully recaptured within the first week, driving higher activation rates." },
+    { title: "18% Reduction in Sign-up Abandonment", description: 'By surfacing the "50 Coin Reward" before the high-friction OTP step, we successfully shifted user perception. Users stopped seeing the phone number request as a data-grab and started seeing it as a necessary step to "secure their wallet."', iconAlt: "Target icon representing 18% reduction in sign-up abandonment" },
+    { title: "28% Uplift in Profile Completion", description: "The combination of the Dashboard Nudge and the 7-Day Retention Modal created a powerful loop. Users who initially skipped the profile setup were successfully recaptured within the first week, driving higher activation rates.", iconAlt: "Target icon representing 28% increase in profile completion rate" },
 ];
 
 const designSections = [
-    { text: 'We needed a way to tell users: <span class="font-denton font-[400] italic text-blue">"If you finish this form, you get a reward."</span>', image: "design1.png" },
-    { text: 'When a user lands on the dashboard for the first time, we don\'t just drop them into a complex UI. We greet them with a <span class="font-[500]">Reward Modal</span>.', image: "design2.png" },
-    { text: "Instead of forcing users to complete their profile immediately after OTP, we let them land on the Dashboard.", image: "design3.png" },
-    { text: "I didn't just design for the first session; I designed for the drop-off.", image: "design4.png" },
-    { text: "To accommodate our new non-finance audience, I refactored the profile form.", image: "design5.png" }
+    { text: 'We needed a way to tell users: <span class="font-denton font-[400] italic text-blue">"If you finish this form, you get a reward."</span>', image: "design1.png", imageAlt: "Sign-up screen design showing coin reward incentive prominently displayed before OTP verification" },
+    { text: 'When a user lands on the dashboard for the first time, we don\'t just drop them into a complex UI. We greet them with a <span class="font-[500]">Reward Modal</span>.', image: "design2.png", imageAlt: "Welcome reward modal design showing 50 Monk Coins bonus for new user sign-up completion" },
+    { text: "Instead of forcing users to complete their profile immediately after OTP, we let them land on the Dashboard.", image: "design3.png", imageAlt: "Dashboard-first approach allowing users to explore features before completing profile setup" },
+    { text: "I didn't just design for the first session; I designed for the drop-off.", image: "design4.png", imageAlt: "7-day retention modal design to re-engage users who skipped profile completion" },
+    { text: "To accommodate our new non-finance audience, I refactored the profile form.", image: "design5.png", imageAlt: "Redesigned profile form with flexible fields supporting Engineers, MBAs, and non-CA users" }
 ];
 
 const PROJECT_TITLE = "Redesigning CA Monk's New User Onboarding";
@@ -177,7 +177,7 @@ export default function CaMonkNuxPage() {
                         Redesigning CA Monk's<br />New User Onboarding
                     </h1>
                     <div className="w-full overflow-hidden mb-8 md:mb-12">
-                        <img src={`${ASSETS_PATH}/hero_image.png`} alt="CA Monk New User Experience" className="w-full h-auto object-cover" />
+                        <img src={`${ASSETS_PATH}/hero_image.png`} alt="CA Monk new user onboarding redesign showing value-first approach with reward incentives and streamlined sign-up flow" className="w-full h-auto object-cover" />
                     </div>
                     <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
                         <p className="font-helvetica font-[400] text-xl md:text-2xl text-black max-w-xl leading-tight">
@@ -220,7 +220,7 @@ export default function CaMonkNuxPage() {
                         <Paragraph className="mb-8">The funnel data painted a clear picture of where the bleeding was happening:</Paragraph>
 
                         <div className="px-6 md:px-16 lg:px-24 py-8 md:py-12">
-                            <ImageContainer src="nux_funnel.png" alt="User funnel analysis" noPadding />
+                            <ImageContainer src="nux_funnel.png" alt="User funnel analytics showing 65% drop-off at OTP step and high bounce rate on profile page" noPadding />
                             <div className="space-y-6 mt-10 md:mt-12">
                                 {userInsights.map((insight, i) => <InsightItem key={i} {...insight} />)}
                             </div>
@@ -243,10 +243,13 @@ export default function CaMonkNuxPage() {
                 {/* Structural Issues Section */}
                 <SectionWrapper id="section-2">
                     <SectionTitle className="leading-tight">Beyond the user psychology,<br />we had structural issues.</SectionTitle>
-                    <ImageContainer src="friction1.png" alt="Old user flow showing friction points" />
+                    <ImageContainer src="friction1.png" alt="Old user flow diagram highlighting friction points including mandatory OTP, CA-specific fields, and hidden rewards" />
                     <Paragraph>I conducted UX Audit to identify a few problems with the existing flow. Let me elaborate section by section:</Paragraph>
                     <div className="px-6 md:px-16 lg:px-24 py-8 md:py-12 space-y-8 md:space-y-12">
-                        {[2, 3, 4, 5].map(n => <ImageContainer key={n} src={`friction${n}.png`} alt={`UX Audit - Friction point ${n}`} noPadding />)}
+                        <ImageContainer src="friction2.png" alt="UX audit showing confusing value proposition with hidden coin rewards and unclear benefits" noPadding />
+                        <ImageContainer src="friction3.png" alt="UX audit revealing CA-specific form fields alienating non-finance users" noPadding />
+                        <ImageContainer src="friction4.png" alt="UX audit highlighting premature data collection before demonstrating product value" noPadding />
+                        <ImageContainer src="friction5.png" alt="UX audit showing lack of skip options and guest mode for hesitant users" noPadding />
                     </div>
                 </SectionWrapper>
 
@@ -259,7 +262,7 @@ export default function CaMonkNuxPage() {
                     <div className="px-6 md:px-16 lg:px-24 py-8 md:py-12 space-y-6">
                         {researchQuestions.map((q, i) => <QuestionItem key={i} question={q} />)}
                     </div>
-                    <ImageContainer src="research_insight.png" alt="Competitive research inspiration" noPadding />
+                    <ImageContainer src="research_insight.png" alt="Competitive analysis of Final Round AI, LinkedIn, and Resume Worded showing value-first onboarding patterns" noPadding />
                 </SectionWrapper>
 
                 {/* Choosing the Right Path Section */}
@@ -268,7 +271,7 @@ export default function CaMonkNuxPage() {
                     <Paragraph className="mb-8">
                         We didn't just want to "make it pretty." We had to decide the sequence of Data vs. Value. We whiteboarded 4 distinct approaches:
                     </Paragraph>
-                    <ImageContainer src="flow_discussion.png" alt="Flow Discussion - Four approaches" />
+                    <ImageContainer src="flow_discussion.png" alt="Whiteboard showing four onboarding approaches: data-first, value-first, hybrid, and progressive disclosure" />
                 </SectionWrapper>
 
                 {/* Wireframing Section */}
@@ -277,7 +280,7 @@ export default function CaMonkNuxPage() {
                     <Paragraph className="mb-8">
                         Once we locked the flow of <span className="font-[500]">value-first approach</span>, I moved to layout and hierarchy.
                     </Paragraph>
-                    <ImageContainer src="wireframe.png" alt="Wireframes" noPadding />
+                    <ImageContainer src="wireframe.png" alt="Low-fidelity wireframes showing new onboarding flow with reward modal, dashboard-first landing, and flexible profile form" noPadding />
                 </SectionWrapper>
 
                 {/* Visual Overhaul Section */}
@@ -286,7 +289,7 @@ export default function CaMonkNuxPage() {
                     {designSections.map((section, i) => (
                         <div key={i}>
                             <p className="font-helvetica font-[300] text-base md:text-lg text-black leading-relaxed mb-8" dangerouslySetInnerHTML={{ __html: section.text }} />
-                            <ImageContainer src={section.image} alt={`Design ${i + 1}`} />
+                            <ImageContainer src={section.image} alt={section.imageAlt} />
                         </div>
                     ))}
                 </SectionWrapper>
@@ -306,11 +309,12 @@ export default function CaMonkNuxPage() {
                     <SectionTitle>Subtle Delights</SectionTitle>
                     <Paragraph className="mb-12">I used subtle UI animations to reinforce value.</Paragraph>
                     <div className="grid grid-cols-2 gap-2 md:gap-16 w-full px-6 md:px-16 lg:px-24 py-8 md:py-12">
-                        {["Coin Animate.gif", "File Opening.gif"].map((gif, i) => (
-                            <div key={i} className="w-full">
-                                <img src={`${ASSETS_PATH}/${gif}`} alt={gif.replace('.gif', '')} className="w-full h-auto object-contain" />
-                            </div>
-                        ))}
+                        <div className="w-full">
+                            <img src={`${ASSETS_PATH}/Coin Animate.gif`} alt="Animated coin reward micro-interaction showing coins being added to user wallet on sign-up completion" className="w-full h-auto object-contain" />
+                        </div>
+                        <div className="w-full">
+                            <img src={`${ASSETS_PATH}/File Opening.gif`} alt="Animated file opening micro-interaction showing smooth document reveal transition" className="w-full h-auto object-contain" />
+                        </div>
                     </div>
                 </SectionWrapper>
 
