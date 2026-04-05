@@ -137,11 +137,21 @@ export default function AboutSection() {
             <div className="flex flex-col md:flex-row md:justify-between md:items-start border-b border-black-mantle pb-3 md:pb-4">
               <div className="mb-1 md:mb-0">
                 <p className="font-helvetica font-[300] text-lg md:text-lg text-black">
+                  <span className="font-[500]">Product Designer</span> / Copods
+                </p>
+              </div>
+              <div>
+                <p className="font-helvetica text-sm md:text-lg text-black">2026 - Present</p>
+              </div>
+            </div>
+            <div className="flex flex-col md:flex-row md:justify-between md:items-start border-b border-black-mantle pb-3 md:pb-4">
+              <div className="mb-1 md:mb-0">
+                <p className="font-helvetica font-[300] text-lg md:text-lg text-black">
                   <span className="font-[500]">Product Designer</span> / CA Monk
                 </p>
               </div>
               <div>
-                <p className="font-helvetica text-sm md:text-lg text-black">2024 - 2025</p>
+                <p className="font-helvetica text-sm md:text-lg text-black">2024 - 2026</p>
               </div>
             </div>
             <div className="flex flex-col md:flex-row md:justify-between md:items-start border-b border-black-mantle pb-3 md:pb-4">
