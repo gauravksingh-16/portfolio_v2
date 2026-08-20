@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import dynamic from "next/dynamic";
 import { AnimatePresence } from "framer-motion";
+import { Lock } from "@phosphor-icons/react";
 import { type Project } from "@/data/projects";
 import PasswordModal from "./PasswordModal";
 
@@ -158,6 +159,14 @@ export default function ProjectGrid({ projects, showFeaturedBadge = false, viewM
                                 alt={project.title}
                                 className="w-full h-full object-cover"
                             />
+
+                            {/* Confidential chip */}
+                            {project.protected && (
+                                <div className="absolute top-3 right-3 flex items-center gap-1.5 bg-black/70 backdrop-blur-sm text-white font-helvetica text-xs px-2.5 py-1.5">
+                                    <Lock size={12} weight="bold" />
+                                    <span>Confidential</span>
+                                </div>
+                            )}
 
                             {/* Mouse-following tooltip */}
                             <div

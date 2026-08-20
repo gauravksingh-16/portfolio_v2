@@ -12,6 +12,17 @@ export interface Project {
 
 export const projects: Project[] = [
     {
+        id: "enterprise-ai-security",
+        title: "Securing Enterprise AI Workflows",
+        company: "Confidential",
+        description: "Designing an AI security platform delivering end-to-end research, visual strategy, scalable design systems, and a modular drag-and-drop dashboard.",
+        image: "/assets/projects/AIGovernance.png",
+        protected: true,
+        link: "/projects/enterprise-ai-security",
+        featured: true,
+        published: true
+    },
+    {
         id: "camonk-nux",
         title: "Redesigning new user onboarding",
         company: "CA Monk",
@@ -55,15 +66,4 @@ export const projects: Project[] = [
         featured: true,
         published: false
     },
-    {
-        id: "enterprise-ai-security",
-        title: "Securing Enterprise AI Workflows",
-        company: "Confidential",
-        description: "Designing an AI security platform delivering end-to-end research, visual strategy, scalable design systems, and a modular drag-and-drop dashboard.",
-        image: "/assets/projects/AIGovernance.png",
-        protected: true,
-        link: "/projects/enterprise-ai-security",
-        featured: true,
-        published: true
-    }
 ];
