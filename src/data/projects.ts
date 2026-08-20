@@ -12,6 +12,17 @@ export interface Project {
 
 export const projects: Project[] = [
     {
+        id: "ai-visual-concepting",
+        title: "Automating Early-Stage Visual Concepting",
+        company: "Confidential",
+        description: "Building for an internal AI tool that automate raw briefs into structured moodboards, design tokens, and concepts.",
+        image: "/assets/projects/Visual_Design _AI.png",
+        protected: true,
+        link: "/projects/genai-visual-concepting",
+        featured: true,
+        published: true
+    },
+    {
         id: "enterprise-ai-security",
         title: "Securing Enterprise AI Workflows",
         company: "Confidential",
