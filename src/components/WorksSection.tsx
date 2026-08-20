@@ -1,10 +1,14 @@
 "use client";
 
-import { projects } from "@/data/projects";
+import { type Project } from "@/data/projects";
 import ProjectGrid from "./ProjectGrid";
 import ScrollReveal from "./ScrollReveal";
 
-export default function WorksSection() {
+interface WorksSectionProps {
+    projects: Project[];
+}
+
+export default function WorksSection({ projects }: WorksSectionProps) {
     const featuredProjects = projects.filter(project => project.featured);
 
     return (
@@ -14,7 +18,7 @@ export default function WorksSection() {
             className="min-h-screen bg-white px-6 md:px-40 py-12 md:py-20"
         >
             <h2 id="works-heading" className="font-helvetica font-[500] text-3xl md:text-5xl mb-12 md:mb-20">
-                <span className="font-denton font-medium italic">(3)</span> Works
+                <span className="font-denton font-medium italic">({featuredProjects.length})</span> Works
             </h2>
 
             <ScrollReveal delay={0.2}>
