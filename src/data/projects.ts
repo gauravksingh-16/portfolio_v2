@@ -61,7 +61,7 @@ export const projects: Project[] = [
         company: "CA Monk",
         description: "The official design system for CA Monk, providing a unified visual language and reusable components for consistent brand experiences.",
         image: "/assets/projects/Monk-design-system.png",
-        protected: true,
+        protected: false,
         link: "/projects/monk-design-system",
         featured: true,
         published: false
